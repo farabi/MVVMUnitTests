@@ -17,18 +17,8 @@ class CartoonViewController: UIViewController {
     @IBOutlet weak var charactersTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
     var viewModel: CartoonViewModel?
     let disposeBag = DisposeBag()
-
-    /*
-     viewModel
-     .onShowLoadingHud
-     .asObservable()
-     .map { [weak self] in self?.setLoadingHud(visible: $0) }
-     .subscribe()
-     .disposed(by: disposeBag)
-     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +36,19 @@ class CartoonViewController: UIViewController {
             return
         }
         
-        viewModel.nameDriver().asObservable()
-            .map { $0 }
-            .bind(to:self.cartoonNameLabel.rx.text)
-            .disposed(by:disposeBag)
+        viewModel.name()
+                 .bind(to:self.cartoonNameLabel.rx.text)
+                 .disposed(by:disposeBag)
         
-        viewModel.logoNameDriver().asObservable()
-            .map{ UIImage(named: $0) }
-            .bind(to: cartoonImageView.rx.image)
-            .disposed(by: disposeBag)
+        viewModel.logoName()
+                 .map{ UIImage(named: $0) }
+                 .bind(to: cartoonImageView.rx.image)
+                 .disposed(by: disposeBag)
         
-        //activityIndicator.rx.isAnimating
+        viewModel.isloadingObservable.bind(to: activityIndicator.rx.isAnimating).disposed(by: disposeBag)
         
         // Fill characters tableView
-        viewModel.charactersDriver().drive(charactersTableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { row, characterName, cell in
+        viewModel.characters().bind(to: charactersTableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { row, characterName, cell in
             
             cell.textLabel?.text = characterName
             
