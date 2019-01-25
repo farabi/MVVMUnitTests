@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jyz-5S-dch">
-                                <rect key="frame" x="40" y="197" width="295" height="430"/>
+                                <rect key="frame" x="40" y="221" width="295" height="406"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tey-Hw-aMv">
@@ -39,13 +39,21 @@
                                 <rect key="frame" x="169" y="108.5" width="37" height="37"/>
                                 <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3A-OM-zdZ">
+                                <rect key="frame" x="40" y="187" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jyz-5S-dch" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0JI-Hn-J0n"/>
+                            <constraint firstItem="y3A-OM-zdZ" firstAttribute="top" secondItem="tey-Hw-aMv" secondAttribute="bottom" constant="20" id="64e-kB-9R3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jyz-5S-dch" secondAttribute="bottom" constant="40" id="A6x-RW-P7s"/>
+                            <constraint firstItem="jyz-5S-dch" firstAttribute="leading" secondItem="y3A-OM-zdZ" secondAttribute="leading" id="AKE-ja-eDh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jyz-5S-dch" secondAttribute="trailing" constant="40" id="ESj-wJ-7D5"/>
-                            <constraint firstItem="jyz-5S-dch" firstAttribute="top" secondItem="tey-Hw-aMv" secondAttribute="bottom" constant="30" id="FDf-mH-lOd"/>
+                            <constraint firstItem="jyz-5S-dch" firstAttribute="top" secondItem="y3A-OM-zdZ" secondAttribute="bottom" constant="10" id="IZC-yy-5R6"/>
                             <constraint firstItem="tey-Hw-aMv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RXG-sx-bWl"/>
                             <constraint firstItem="qdJ-H3-lH2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="Tst-PR-Xz4"/>
                             <constraint firstItem="u21-zR-aTk" firstAttribute="centerY" secondItem="tey-Hw-aMv" secondAttribute="centerY" id="fd8-4Y-xQE"/>
